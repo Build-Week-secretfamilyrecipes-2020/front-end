@@ -20,16 +20,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   height: 100%;
 }
 
 .input-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   height: 100%;
+}
+
+.username-container,
+.password-container {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 25%;
 }
 
 #email {
@@ -39,4 +47,8 @@
 .bottom-container {
   height: 400px;
   background-color: wheat;
+}
+
+.new-here {
+  padding: 25px;
 }

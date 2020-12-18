@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import * as Yup from "yup";
 import { formSchema } from "../validations/UserValidations";
 import "./Register.css";
 
-const Register = () => {
+const Login = () => {
+  const history = useHistory();
+
   const [form, setForm] = useState({
     username: "",
     password: "",
@@ -60,15 +62,16 @@ const Register = () => {
         setErrors({ ...errors, message: "Fill out form" });
         return clearErrors();
       }
-
       const resp = await axios.post(
-        "http://localhost:4200/api/auth/register",
+        "http://localhost:4200/api/auth/login",
         form
       );
       console.log(resp.data);
+      localStorage.setItem("Token", resp.data.token);
+      history.push("/");
     } catch (err) {
       console.log(err);
-      setErrors({ ...errors, message: "Account already exists" });
+      setErrors({ ...errors, message: "Account information not valid" });
       clearErrors();
     }
   };
@@ -76,7 +79,7 @@ const Register = () => {
   return (
     <div>
       <section className="register-container">
-        <h1 className="title">Register</h1>
+        <h1 className="title">Login</h1>
         <div className="main-container">
           <form className="form-container" onSubmit={onSubmit}>
             <div className="input-container">
@@ -109,7 +112,7 @@ const Register = () => {
                 ) : null}
               </div>
               <button className="submit-button" type="submit">
-                Register
+                Log in
               </button>
               {errors.message.length > 0 ? (
                 <p className="error">{errors.message}</p>
@@ -120,11 +123,11 @@ const Register = () => {
       </section>
       <section className="bottom-container">
         <h2 className="new-here">
-          Already have an account? <Link to="/login">Log in!</Link>
+          Don't have an account? <Link to="/">Register</Link>
         </h2>
       </section>
     </div>
   );
 };
 
-export default Register;
+export default Login;
