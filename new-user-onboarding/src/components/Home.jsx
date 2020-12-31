@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Home = () => {
+  const history = useHistory();
   return (
     <div>
       <h1>Home</h1>
@@ -15,6 +16,14 @@ const Home = () => {
           <p>Create a new recipe</p>
         </div>
       </Link>
+      <button
+        onClick={() => {
+          localStorage.clear();
+          history.push("/");
+        }}
+      >
+        Log out
+      </button>
     </div>
   );
 };

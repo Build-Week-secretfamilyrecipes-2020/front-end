@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import RecipeCard from "./RecipeCard";
 
@@ -9,6 +9,8 @@ const Recipes = (props) => {
   const [recipeCardData, setRecipeCardData] = useState({});
   const [filteredRecipes, setFilteredRecipes] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
+
+  const history = useHistory();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,7 +29,8 @@ const Recipes = (props) => {
   console.log(recipeCardData);
 
   const filteredRecipeList = (e) => {
-    console.log(e.key);
+    console.log(e.target.value);
+
     if (e.target.value.length === 1 && e.key === "Backspace") {
       return setFilteredRecipes([]);
     }
@@ -79,6 +82,14 @@ const Recipes = (props) => {
           </div>
         </Link>
       </div>
+      <button
+        onClick={() => {
+          localStorage.clear();
+          history.push("/");
+        }}
+      >
+        Log out
+      </button>
     </div>
   );
 };

@@ -159,6 +159,14 @@ const NewRecipe = () => {
           </div>
         </Link>
       </div>
+      <button
+        onClick={() => {
+          localStorage.clear();
+          history.push("/");
+        }}
+      >
+        Log out
+      </button>
     </div>
   );
 };
