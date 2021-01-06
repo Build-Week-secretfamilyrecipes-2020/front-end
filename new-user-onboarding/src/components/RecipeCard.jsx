@@ -9,7 +9,12 @@ const RecipeCard = (props) => {
             <h2 className="recipe-card-title">{item.title}</h2>
             <h4 className="recipe-card-materials">{item.materials}</h4>
             <p className="recipe-card-description">{item.description}</p>
-            {item.video ? <img src={item.video} alt="Picture of food" /> : null}
+            {item.video ? (
+              <img
+                src={item.video}
+                alt="food of choice that the user uploaded"
+              />
+            ) : null}
           </div>
         ))
       ) : (

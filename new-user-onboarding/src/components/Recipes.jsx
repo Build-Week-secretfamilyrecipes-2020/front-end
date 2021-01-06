@@ -8,7 +8,6 @@ import "./Recipes.css";
 const Recipes = (props) => {
   const [recipeCardData, setRecipeCardData] = useState({});
   const [filteredRecipes, setFilteredRecipes] = useState({});
-  const [searchTerm, setSearchTerm] = useState("");
 
   const history = useHistory();
 
