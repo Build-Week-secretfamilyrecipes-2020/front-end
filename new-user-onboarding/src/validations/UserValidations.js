@@ -16,4 +16,5 @@ export const recipeSchema = Yup.object().shape({
   instructions: Yup.string(),
 
   description: Yup.string().required("Please describe your dish"),
+  video: Yup.string(),
 });

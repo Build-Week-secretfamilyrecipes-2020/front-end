@@ -11,10 +11,10 @@ const NewRecipe = () => {
 
   const [recipeCard, setRecipeCard] = useState({
     title: "",
-
     materials: "",
     instructions: "",
     description: "",
+    video: "",
   });
 
   const [errors, setErrors] = useState({
@@ -135,6 +135,17 @@ const NewRecipe = () => {
               id="description"
               name="description"
               value={recipeCard.description}
+              onChange={changeHandler}
+              className="input-field"
+            />
+          </div>
+          <div className="input-box">
+            <label>Upload a picture </label>
+            <input
+              type="text"
+              id="video"
+              name="video"
+              value={recipeCard.video}
               onChange={changeHandler}
               className="input-field"
             />
