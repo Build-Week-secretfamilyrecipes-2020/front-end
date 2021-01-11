@@ -1,0 +1,191 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(#56598f,#838491,#56598f,
+  #56598f,#838491,#56598f,#56598f,#56598f,
+  #838491,#838491,#6289d3,#56598f,#797cb9, #63c456,#797cb9);
+  color: white;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 36px;
+}
+
+i {
+  font-size: 12px;
+}
+
+
+
+nav{
+
+  display:flex;
+  
+  padding:.1rem;
+  margin:0rem .5rem .5rem .5rem;
+  width:100%;
+  height:100%;
+  background-color: black;
+}
+input {
+
+  padding: 6px;
+  background: black;
+  border: none;
+  color: white;
+  border-bottom: 1px solid white;
+  margin-top: 0;
+  margin-right: 8px;
+}
+
+input::placeholder {
+  color: #4147ad;
+}
+
+.title-input {
+  font-size: 24px;
+}
+
+input:focus {
+  outline: none;
+}
+
+nav h1 {
+  color:red;
+  margin: 0;
+}
+
+div > form {
+  display: flex;
+
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: .1rem;
+  padding: .1rem;
+  background-color: brown;
+}
+div > form > input {
+  width:100%;
+
+}
+
+
+
+button {
+  padding: 6px 8px;
+  font-size: 16px;
+  background: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #ffffff22;
+}
+
+button:focus {
+  outline: none;
+}
+.recipeCard{
+  padding:.2rem;
+  margin:.8rem;
+  background:brown;
+  width:40%;
+  display:flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  /* justify-content: space-evenly; */
+}
+.friends-list {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 36px;
+}
+div.recipeCard i{
+  font-size: 12px;
+  width:5%;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  float:right;
+  justify-content: right;
+  flex-flow: row nowrap;
+
+}
+h2 {
+  margin: 4px 0;
+  border-bottom: 1px solid white;
+  padding: 6px;
+  position: relative;
+  /* width: 180px; */
+  width: 60%;
+  display: flex;
+  cursor: pointer;
+}
+
+.fa-dragon {
+  display: block;
+  float:right;
+  position: absolute;
+  right: 12px;
+  top: 9px;
+}
+
+
+div.heading{
+  display:flex;
+  width:100%;
+  height:100%;
+  margin: 1.2rem;
+  padding: .1rem;
+  
+  flex-wrap: nowrap;
+  color:white;
+  
+  text-decoration-color:white;
+}
+
+a:visited{
+  color:white;
+}
+a:active{
+  color:red;
+}
+div ul.heading{
+  display:flex;
+  width:100%;
+  height:100%;
+  margin: .2rem;
+  padding: .1rem;
+  
+  flex-wrap: nowrap;
+  
+  text-decoration: none;
+}
+ul.heading{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width:100%;
+  height:100%;
+}
+
+ul.heading li{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width:40%;
+  height:100%;
+  text-decoration: none;
+  color: white;
+
+}
